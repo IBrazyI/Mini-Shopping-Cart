@@ -11,9 +11,10 @@ type Item = {
 
 type Props = {
     item: Item
+    addItemToBasket: (item: Item, quantity: number) => void
 }
 
-function ShopItem({ item }: Props) {
+function ShopItem({ item, addItemToBasket }: Props) {
     const [quantity, setQuantity] = useState(0)
     const isAddDisabled = quantity <= 0
 
@@ -27,6 +28,10 @@ function ShopItem({ item }: Props) {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = Math.max(0, Number(event.target.value) || 0)
         setQuantity(value)
+    }
+    const handleAdd = () => {
+        addItemToBasket(item, quantity)
+        setQuantity(0)
     }
     return (
         <div className="shop-item">
@@ -49,7 +54,7 @@ function ShopItem({ item }: Props) {
                 <button type="button" onClick={increment}>More</button>
             </div>
 
-            <button type='button' disabled={isAddDisabled}>Add to basket</button>
+            <button type='button' disabled={isAddDisabled} onClick={handleAdd}>Add to basket</button>
         </div>
     )
 }
