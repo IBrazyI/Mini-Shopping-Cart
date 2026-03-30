@@ -1,9 +1,3 @@
-.storefront {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
 .basket-overlay {
   position: fixed;
   inset: 0;
@@ -14,7 +8,18 @@
 }
 .basket-modal {
   background: #fff;
+  color: black;
   border-radius: 16px;
   padding: 24px;
   width: min(520px, calc(100% - 32px));
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: black;
 }
