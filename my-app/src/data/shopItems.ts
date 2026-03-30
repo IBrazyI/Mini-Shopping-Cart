@@ -1,4 +1,4 @@
-import firstAidIcon from '../assets/first-aid-kit-icon.png'
+import firstAidIcon from '../assets/first-aid-icon.png'
 import fuelIcon from '../assets/fuel-icon.png'
 import rationsIcon from '../assets/rations-icon.png'
 import waterIcon from '../assets/water-icon.png'
