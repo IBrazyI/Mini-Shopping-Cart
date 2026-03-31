@@ -14,6 +14,11 @@
   width: min(520px, calc(100% - 32px));
 }
 
+.basket-close-button-container {
+  display: flex;
+  justify-content: end;
+}
+
 .modal-header {
     display: flex;
     justify-content: center;
@@ -22,6 +27,17 @@
 
 .modal-header h2 {
     color: black;
+}
+
+.basket-item {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 8px;
+}
+
+.basket-item-change-quantity button {
+  width: 30px;
+  margin-right: 2px;
 }
 
 .delete-item-from-basket-button {
