@@ -7,5 +7,16 @@ This app is a small e-commerce frontend called "Doomsday Supply Shop". I have ha
 ## Running the App
 1. Navigate to the GitHub URL [https://github.com/IBrazyI/Mini-Shopping-Cart]
 2. Click the green "Code" button and clone/download the code in your preferred way ("Download Zip" for this example.)
-[![alt text](image.png)]
+![alt text](image.png)
 
+3. Open the file in your desired IDE ("VS code" for this example.) and open a new terminal.
+![alt text](image-1.png)
+
+4. Within the terminal type "cd Mini-Shopping-Cart-main" then "cd my-app" to navigate to the app. Then type "npm i" to install the dependencies. (If you don't have npm installed on your system, please follow the guidelines here https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+![alt text](image-2.png)
+
+5. After the dependency installation is complete type "npm run dev" into your terminal to run a local version of the code.
+![alt text](image-3.png)
+
+6. CTRL+ left click the " http://localhost:5174/" url to open the app!
+![alt text](image-4.png)
