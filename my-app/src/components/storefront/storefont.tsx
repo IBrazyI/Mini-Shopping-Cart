@@ -3,12 +3,7 @@ import ShopItem from '../shopItem/shopItem.tsx'
 import { items, type Item } from '../../data/shopItems.ts'
 import BasketModal from '../basket/basket.tsx'
 import { useState, useEffect } from 'react'
-
-type BasketLine = {
-    item: Item
-    quantity: number
-    price: number
-}
+import type { BasketLine } from '../../types/types.ts'
 
 function Storefront() {
     const handleAddItemToBasket = (item: Item, quantity: number) => {
@@ -43,13 +38,27 @@ function Storefront() {
         localStorage.setItem('basket', JSON.stringify(basketItems))
     }, [basketItems])
 
+    const handleUpdateQuantity = (itemId: number, newQuantity: number) => {
+        setBasketItems((current) =>
+            current
+                .map((line) => {
+                    if (line.item.id !== itemId) return line
+
+                    const clampedQuantity = Math.max(1, Math.min(line.item.stock, newQuantity))
+
+                    return { ...line, quantity: clampedQuantity }
+                })
+                .filter((line) => line.quantity > 0)
+        )
+    }
+
     const basketCount = basketItems.reduce((sum, line) => sum + line.quantity, 0)
 
     return (
         <>
-            <div>
+            <div className='storefront-header'>
                 <h1>Doomsday Supply Shop</h1>
-                <button type="button" onClick={() => setIsBasketOpen(true)}>Basket</button>
+                <button type="button" onClick={() => setIsBasketOpen(true)}>Basket {basketCount}</button>
             </div>
             <div className="storefront">
                 {items.map(item => (
@@ -65,6 +74,7 @@ function Storefront() {
                     items={basketItems}
                     onClose={() => setIsBasketOpen(false)}
                     onRemoveItem={handleRemoveItem}
+                    onUpdateQuantity={handleUpdateQuantity}
                 />
             )}
         </>

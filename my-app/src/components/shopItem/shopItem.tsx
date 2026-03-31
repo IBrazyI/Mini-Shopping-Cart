@@ -1,18 +1,6 @@
 import './shopItem.css'
 import { useState } from 'react'
-
-type Item = {
-    id: number;
-    name: string;
-    image: string;
-    price: number,
-    stock: number
-}
-
-type Props = {
-    item: Item
-    addItemToBasket: (item: Item, quantity: number) => void
-}
+import type { Props } from '../../types/types.ts'
 
 function ShopItem({ item, addItemToBasket }: Props) {
     const [quantity, setQuantity] = useState(0)
