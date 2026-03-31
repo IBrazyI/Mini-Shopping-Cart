@@ -1,3 +1,6 @@
+.storefront-header {
+  margin-bottom: 16px;
+}
 .storefront {
     display: flex;
     justify-content: center;
