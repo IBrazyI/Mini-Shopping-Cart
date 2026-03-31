@@ -35,6 +35,7 @@ Due to the time constraints and evaluation criteria while the app is functional 
 - Basket hover functionality/page share with products
 - Implement further unit tests
 - Split current logic down further into the unused files "/hooks, /services"
+- Implement WCAG accessibility standards
 
 ## Use of AI
 To prove what i can do within react for this task, minimal amounts of AI have been used.
